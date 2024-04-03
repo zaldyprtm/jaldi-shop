@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div className='mx-auto'>
             <header className='w-full bg-sky-600'>
-                <div className='md:px-4 font-semibold uppercase md:text-2xl text-md px-2'>Online Shop 
+                <div className='md:px-4 font-semibold uppercase md:text-2xl text-md px-2'>Jaldi Shop 
                     <FontAwesomeIcon icon={faShop} className='px-2 animate-pulse' /> 
                     
                         {/* <div>
