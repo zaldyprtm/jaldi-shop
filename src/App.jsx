@@ -3,6 +3,7 @@ import './App.css';
 import './index.css';
 import Header from './components/Header';
 import Barang from './components/Barang';
+import Footer from './components/Footer';
 
 const App = () => {
 
@@ -16,6 +17,8 @@ const App = () => {
        <div>
        <Barang />
      </div>
+
+     <Footer />
         
  
       
