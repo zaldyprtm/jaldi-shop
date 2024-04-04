@@ -45,8 +45,8 @@ const Header = () => {
       <header className="bg-indigo-500 h-12 rounded-b-lg bg-transparent border border-sky-800">
         <div className="px-4 py-2">
           <div className="flex items-center justify-between relative">
-            <h1 className="uppercase font-bold text-md text-emerald-200 hover:text-white transition ease-in-out duration-300 absolute top-[2px]">
-              fake store <span> <FontAwesomeIcon icon={faStore} /> </span>
+            <h1 className="uppercase font-bold text-xl text-emerald-200 hover:text-white transition ease-in-out duration-300 absolute top-[2px]">
+              KEDAI ZALDY <span> <FontAwesomeIcon icon={faStore} /> </span>
             </h1>
             <div className="flex items-center absolute top-[3.1px] left-[300px]"  ref={searchRef}>
               <button

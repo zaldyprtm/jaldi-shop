@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../components/FoodAndDrinkList.css';
 
 const FoodAndDrinkList = () => {
   const [foodAndDrinkList, setFoodAndDrinkList] = useState([]);
@@ -10,9 +11,10 @@ const FoodAndDrinkList = () => {
   useEffect(() => {
     const fetchFoodAndDrinkData = async () => {
       try {
-        const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink');
+        const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic');
         const drinkData = response.data.drinks;
         setFoodAndDrinkList(drinkData);
+        console.log(drinkData);
       } catch (error) {
         console.error('Error fetching food and drink data:', error);
       }
@@ -33,10 +35,11 @@ const FoodAndDrinkList = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4">Our Menu</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <p className='mb-2 -mt-3 font-semibold'>nikmati berbagai menu fresh drink terbaik kami</p>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 shadow-lg ">
         {currentItems.map((item) => (
-          <div key={item.idDrink} className="bg-white rounded-lg shadow-md p-4 text-black">
-            <img src={item.strDrinkThumb} alt={item.strDrink} className="w-full h-40 object-cover rounded-md mb-4" />
+          <div key={item.idDrink} className="bg-white rounded-lg shadow-md p-4 text-black outline-dotted outline-sky-600">
+            <img src={item.strDrinkThumb} alt={item.strDrink} className="item-image w-full h-40 object-cover rounded-md mb-4" />
             <h2 className="text-lg font-bold mb-2">{item.strDrink}</h2>
             <p className="text-black">{item.strCategory}</p>
           </div>
