@@ -5,6 +5,7 @@ const FoodAndDrinkList = () => {
   const [foodAndDrinkList, setFoodAndDrinkList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(4); // Change the number of items per page as needed
+  const [pageMargin] = useState(5); // Change the page margin as needed
 
   useEffect(() => {
     const fetchFoodAndDrinkData = async () => {
@@ -27,6 +28,8 @@ const FoodAndDrinkList = () => {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const numPages = Math.ceil(foodAndDrinkList.length / itemsPerPage);
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4">Our Menu</h1>
@@ -40,15 +43,18 @@ const FoodAndDrinkList = () => {
         ))}
       </div>
       {/* Pagination */}
-      <ul className="flex justify-center mt-4">
-        {Array.from({ length: Math.ceil(foodAndDrinkList.length / itemsPerPage) }, (_, index) => (
-          <li key={index} className="mx-2">
-            <button onClick={() => paginate(index + 1)} className="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded-md">
-              {index + 1}
-            </button>
-          </li>
+      <div className="flex justify-center mt-4">
+        {Array.from({ length: Math.min(numPages, pageMargin) }, (_, index) => (
+          <button key={index} onClick={() => paginate(index + 1)} className="mx-1 px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded-md text-sm md:text-base text-black font-bold">
+            {index + 1}
+          </button>
         ))}
-      </ul>
+        {numPages > pageMargin && (
+          <button onClick={() => paginate(pageMargin + 1)} className="mx-1 px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded-md text-sm md:text-base text-black font-bold">
+            &raquo;
+          </button>
+        )}
+      </div>
     </div>
   );
 };
