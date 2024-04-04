@@ -5,9 +5,9 @@ import { useEffect, useState } from "react"
 const Slide = () => {
 
     const images = [
-        'https://source.unsplash.com/600x250?food',
+        'https://source.unsplash.com/600x250?cocktails',
         'https://source.unsplash.com/600x300?drink',
-        'https://source.unsplash.com/600x300?snacks',
+        'https://source.unsplash.com/600x300?drinks',
     ]
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -18,7 +18,7 @@ const Slide = () => {
             if (isSliding) {
                 setCurrentImageIndex((prevIndex) => (prevIndex === images.length -1 ? 0 : prevIndex + 1))
             }
-        }, 3000)
+        }, 2000)
 
         return () => clearInterval(interval)
     }, [isSliding, images.length])

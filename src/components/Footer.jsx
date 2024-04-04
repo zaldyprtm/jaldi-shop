@@ -14,7 +14,7 @@ return (<>
             <div className='flex justify-center items-center -mt-1'>
                 <FontAwesomeIcon icon={faCopyright} className='pr-2'/> 2024
             </div>
-            </div>
+            </div> 
         </footer>
     
 

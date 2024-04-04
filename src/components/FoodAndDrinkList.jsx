@@ -38,7 +38,7 @@ const FoodAndDrinkList = () => {
           <div key={item.idDrink} className="bg-white rounded-lg shadow-md p-4 text-black">
             <img src={item.strDrinkThumb} alt={item.strDrink} className="w-full h-40 object-cover rounded-md mb-4" />
             <h2 className="text-lg font-bold mb-2">{item.strDrink}</h2>
-            <p className="text-gray-600">{item.strCategory}</p>
+            <p className="text-black">{item.strCategory}</p>
           </div>
         ))}
       </div>

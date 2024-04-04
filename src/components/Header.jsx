@@ -48,12 +48,12 @@ const Header = () => {
             <h1 className="uppercase font-bold text-md text-emerald-200 hover:text-white transition ease-in-out duration-300 absolute top-[2px]">
               fake store <span> <FontAwesomeIcon icon={faStore} /> </span>
             </h1>
-            <div className="flex items-center absolute top-[3.1px] left-[310px]" ref={searchRef}>
+            <div className="flex items-center absolute top-[3.1px] left-[300px]"  ref={searchRef}>
               <button
-                className="text-white focus:outline-sky-400 mr-2"
+                className="text-white  focus:outline-sky-400 text-2xl"
                 onClick={toggleSearch}
               >
-                <FontAwesomeIcon icon={faSearch} />
+                <FontAwesomeIcon icon={faSearch} className="" />
               </button>
               {isSearchOpen && (
               <div className={`search-input ${isSearchOpen ? "open" : ""}`}>
@@ -62,7 +62,7 @@ const Header = () => {
                 placeholder="Cari produk..."
                 value={searchQuery}
                 onChange={handleSearchChange}
-                className="bg-slate-300 rounded-md px-2 text-black w-36 right-[30px] top-[0.8px] absolute focus:outline-1 outline-sky-500"
+                className="bg-slate-300 rounded-md px-2 text-black w-36 right-[30px] top-[3px] absolute focus:outline-1 outline-sky-500"
               />
             </div>
               )}
@@ -70,12 +70,12 @@ const Header = () => {
           </div>
 
           <div className="flex items-center px-4 text-white">
-            <button className="block lg:hidden absolute right-4 top-[10px] hamburger-menu" onClick={toggleMenu}>
+            <button className="block lg:hidden  absolute right-4 top-[10px] hamburger-menu text-2xl" onClick={toggleMenu}>
               <FontAwesomeIcon icon={faHamburger} />
             </button>
 
             {isOpen && (
-              <nav id="nav-menu" className="absolute shadow-md rounded-lg max-w-[150px] w-[150px] transition-all top-14 left-56 duration-500 ease-in-out bg-transparent border border-sky-500 z-[9999]">
+              <nav id="nav-menu" className="absolute shadow-md rounded-lg max-w-[150px] w-[150px] transition-all top-14 left-56 duration-500 ease-in-out  border border-sky-500 z-[9999]">
                 <ul className="block ">
                   <li className="group text-sky-200 px-4 font-bold uppercase text-sm group-hover:text-white">Home</li>
                   <li className="group text-sky-200 px-4 font-bold uppercase text-sm group-hover:text-white">
