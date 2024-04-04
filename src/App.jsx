@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
 import './index.css';
-// import Barang from './components/Barang';
-import Home from './components/Home';
+import './components/FoodAndDrinkList'
 import Footer from './components/Footer';
 import Header from './components/Header'
 import Slide from './components/Slide';
-
+import FoodAndDrinkList from './components/FoodAndDrinkList';
 
 
 const App = () => {
@@ -17,16 +16,13 @@ const App = () => {
       <div>
         <Header />
         <Slide />
+        <FoodAndDrinkList />
       </div>
        <div>
-       {/* <Barang /> */}
+    
      </div>
 
-     {/* <Footer /> */}
-        
- 
-      
-      {/* Contoh button untuk login */}
+     <Footer />
       
     </>
   );

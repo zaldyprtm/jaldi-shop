@@ -8,9 +8,9 @@ const Footer = () => {
 
 return (<>
     
-        <footer className='bg-sky-700 mt-10 mx-auto w-[1210px] rounded-md'>
+        <footer className='bg-sky-700 mt-10 mx-auto rounded-md'>
             <div className=''>
-            <h1 className='text-center font-bold py-2'>Jaldi Shop</h1>
+            <h1 className='text-center font-bold py-2 uppercase'>Fake store</h1>
             <div className='flex justify-center items-center -mt-1'>
                 <FontAwesomeIcon icon={faCopyright} className='pr-2'/> 2024
             </div>
