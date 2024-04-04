@@ -75,7 +75,7 @@ const Header = () => {
             </button>
 
             {isOpen && (
-              <nav id="nav-menu" className="absolute shadow-md rounded-lg max-w-[150px] w-[150px] transition-all top-14 left-56 duration-500 ease-in-out border bg-sky-500 border-sky-500 z-[9999]">
+              <nav id="nav-menu" className="absolute shadow-md rounded-lg max-w-[150px] w-[150px] transition-all top-14 left-56 duration-500 ease-in-out bg-transparent border border-sky-500 z-[9999]">
                 <ul className="block ">
                   <li className="group text-sky-200 px-4 font-bold uppercase text-sm group-hover:text-white">Home</li>
                   <li className="group text-sky-200 px-4 font-bold uppercase text-sm group-hover:text-white">

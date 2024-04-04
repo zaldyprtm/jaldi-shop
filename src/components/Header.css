@@ -8,3 +8,7 @@ transition: max-width 0.3s ease-in-out;
     max-width: 200px;
 }
 
+#nav-menu {
+    background: rgb(6, 82, 133);
+    background: radial-gradient(circle, rgb(37, 117, 197) 0%, rgba(70,216,252,1) 100%);
+}
