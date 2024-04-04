@@ -1,0 +1,10 @@
+.search-input {
+overflow: hidden;
+max-width: 0;
+transition: max-width 0.3s ease-in-out;
+}
+
+.search-input.open {
+    max-width: 200px;
+}
+

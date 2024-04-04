@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
 import './index.css';
-import Header from './components/Header';
-import Barang from './components/Barang';
+// import Barang from './components/Barang';
+import Home from './components/Home';
 import Footer from './components/Footer';
+import Header from './components/Header'
+import Slide from './components/Slide';
+
+
 
 const App = () => {
 
@@ -12,13 +16,13 @@ const App = () => {
     <>
       <div>
         <Header />
-        
+        <Slide />
       </div>
        <div>
-       <Barang />
+       {/* <Barang /> */}
      </div>
 
-     <Footer />
+     {/* <Footer /> */}
         
  
       
