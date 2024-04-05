@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 const Slide = () => {
 
     const images = [
-        'https://source.unsplash.com/600x250?cocktails',
+        'https://source.unsplash.com/600x250?icedcoffee',
         'https://source.unsplash.com/600x300?drink',
         'https://source.unsplash.com/600x300?drinks',
     ]

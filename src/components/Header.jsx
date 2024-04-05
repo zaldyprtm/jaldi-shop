@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { faHamburger, faSignIn, faStore } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Modal from "./Modal"; // Import komponen Modal
 import "../components/Header.css";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const handleOutClick = (event) => {
@@ -20,6 +22,10 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
   };
 
   return (
@@ -38,9 +44,7 @@ const Header = () => {
             className="block lg:hidden  absolute right-4 top-[10px] hamburger-menu text-2xl opacity-75 hover:opacity-100 focus:outline-none"
             onClick={toggleMenu}
           >
-            {/* <FontAwesomeIcon icon={faHamburger} />
-             */}
-             ☰
+            ☰
           </button>
 
           {isOpen && (
@@ -59,12 +63,15 @@ const Header = () => {
                   </button>
                 </li>
                 <li className="group text-sky-200 px-4 font-bold uppercase mb-1 text-sm group-hover:text-white mt-1">
-                  <span>Tentang</span>
+                  <button className="uppercase" onClick={toggleModal}>Tentang</button>
                 </li>
               </ul>
             </nav>
           )}
         </div>
+
+        {/* Render Modal component if showModal is true */}
+        {showModal && <Modal toggleModal={toggleModal} />}
       </header>
     </>
   );
