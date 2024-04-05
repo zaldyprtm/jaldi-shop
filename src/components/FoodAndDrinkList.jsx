@@ -12,7 +12,7 @@ const FoodAndDrinkList = () => {
   useEffect(() => {
     const fetchFoodAndDrinkData = async () => {
       try {
-        const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic');
+        const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic');
         const drinkData = response.data.drinks;
         setFoodAndDrinkList(drinkData);
         setFilteredFoodAndDrinkList(drinkData);
