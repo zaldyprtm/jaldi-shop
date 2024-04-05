@@ -64,7 +64,7 @@ const FoodAndDrinkList = () => {
         />
         <div className='flex items-center mt-2 mb-2 justify-center'>
           <button onClick={() => handleFilterChange('Alcoholic')} className={`w-[70px]  py-1 rounded-md ${filterType === 'Alcoholic' ? 'bg-gray-500 text-white' : 'bg-gray-200 text-black'}`}><span className='text-xs'>Alcoholic</span></button>
-          <button onClick={() => handleFilterChange('Non_Alcoholic')} className={`w-[50px] ml-2 h-[45px] rounded-md ${filterType === 'Non_Alcoholic' ? 'bg-gray-500 text-white' : 'bg-gray-200 text-black'}`}> <span className='text-xs text-wrap -top-1'>Non-Alcohol</span> </button>
+          <button onClick={() => handleFilterChange('Non_Alcoholic')} className={`w-[50px] ml-2 h-[45px] rounded-md ${filterType === 'Non_Alcoholic' ? 'bg-gray-500 text-white' : 'bg-gray-200 text-black'}`}> <span className='text-xs text-wrap -top-1'>Non-Alc</span> </button>
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
