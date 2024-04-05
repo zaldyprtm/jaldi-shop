@@ -38,7 +38,9 @@ const Header = () => {
             className="block lg:hidden  absolute right-4 top-[10px] hamburger-menu text-2xl opacity-75 hover:opacity-100 focus:outline-none"
             onClick={toggleMenu}
           >
-            <FontAwesomeIcon icon={faHamburger} />
+            {/* <FontAwesomeIcon icon={faHamburger} />
+             */}
+             ☰
           </button>
 
           {isOpen && (
