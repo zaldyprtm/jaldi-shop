@@ -60,11 +60,11 @@ const FoodAndDrinkList = () => {
           placeholder="Cari menu..."
           value={searchTerm}
           onChange={(e) => handleSearch(e.target.value)}
-          className="block px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-indigo-500"
+          className="block px-4 w-[120px] py-2 rounded-md border border-gray-300 focus:outline-none focus:border-indigo-500"
         />
-        <div className='flex items-center mt-2 mb-2 justify-center'>
+        <div className='flex items-center mr-6 mt-2 mb-2 '>
           <button onClick={() => handleFilterChange('Alcoholic')} className={`w-[70px]  py-1 rounded-md ${filterType === 'Alcoholic' ? 'bg-gray-500 text-white' : 'bg-gray-200 text-black'}`}><span className='text-xs'>Alcoholic</span></button>
-          <button onClick={() => handleFilterChange('Non_Alcoholic')} className={`w-[50px] ml-2 h-[45px] rounded-md ${filterType === 'Non_Alcoholic' ? 'bg-gray-500 text-white' : 'bg-gray-200 text-black'}`}> <span className='text-xs text-wrap -top-1'>Non-Alc</span> </button>
+          <button onClick={() => handleFilterChange('Non_Alcoholic')} className={`w-[85px] ml-2 h-[45px] rounded-md ${filterType === 'Non_Alcoholic' ? 'bg-gray-500 text-white' : 'bg-gray-200 text-black'}`}> <span className='text-xs  -top-1'>Non-Alcoholic</span> </button>
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
