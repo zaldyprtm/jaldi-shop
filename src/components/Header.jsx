@@ -55,7 +55,7 @@ const Header = () => {
           {isOpen && (
             <nav
               id="nav-menu"
-              className="absolute shadow-md rounded-lg max-w-[150px] w-[150px] transition-all top-14 left-56 duration-500 ease-in-out  border border-sky-500 z-[9999] h-[150px] lg:w-[250px] md:left-[900px]"
+              className="absolute shadow-md rounded-lg max-w-[150px] w-[150px] transition-all top-14 left-56 duration-500 ease-in-out  border border-sky-500 z-[9999] h-[200px] lg:w-[250px] md:left-[900px]"
             >
               <ul className="block mt-6 px-4 text-center">
                 <li className="group text-sky-200 px-4 font-bold uppercase text-lg group-hover:text-white hover:text-white transition-all ease-in-out duration-300">
@@ -72,6 +72,11 @@ const Header = () => {
                 <li className="group text-sky-200 px-4 font-bold uppercase mb-1 text-lg group-hover:text-white mt-2">
                   <button className="uppercase hover:text-white transition-all ease-in-out duration-300" onClick={toggleModal}>Tentang</button>
                 </li>
+                
+                <li className="group text-sky-200 px-4 font-bold uppercase mb-1 text-lg group-hover:text-white mt-2">
+                  <button className="uppercase hover:text-white transition-all ease-in-out duration-300">Pesanan</button>
+                </li>
+                
               </ul>
             </nav>
           )}
