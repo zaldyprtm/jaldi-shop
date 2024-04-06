@@ -7,8 +7,11 @@ const Modal = ({ toggleModal }) => {
 
   return (
     <>
-      <div className="fixed top-0 mx-auto w-[400px] h-full flex justify-center items-center bg-gray-800 bg-opacity-50 z-10 bg-transparent">
-        <div className="bg-white p-8 w-[350px] rounded-3xl shadow-md backdrop-blur-sm">
+      <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-800 bg-opacity-50 z-10">
+        {/* Latar belakang modal */}
+        <div className="absolute inset-0 backdrop-filter backdrop-blur-sm"></div>
+        {/* Modal */}
+        <div className="bg-white p-8 w-[350px] rounded-3xl shadow-md z-20">
           <h2 className="text-xl uppercase text-black font-bold mb-4">Tentang kedai kami</h2>
           <p className="text-gray-700">Halo Folks.....☕</p>
           <p className="text-gray-700">Selamat menikmati menu di kedai kami</p>

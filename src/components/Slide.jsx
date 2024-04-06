@@ -36,7 +36,7 @@ const Slide = () => {
         <>
     <div className="flex justify-center items-center mt-2">
       <div className="relative " onMouseEnter={() => setIsSliding(false)} onMouseLeave={() => setIsSliding(true)}>
-        <img src={images[currentImageIndex]} alt="Gallery" className="w-[370px] object-contain rounded-lg" />
+        <img src={images[currentImageIndex]} alt="Gallery" className="w-[370px] object-contain rounded-lg md:w-[1700px] md:h-[300px] md:rounded-full" />
         <button className="absolute top-1/2 left-0 transform -translate-y-1/2 focus:outline-none" onClick={prevImage}>
           <FontAwesomeIcon className="h-6 w-10 text-gray-400" icon={faArrowLeft} />
         </button>

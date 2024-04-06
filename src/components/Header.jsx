@@ -41,7 +41,7 @@ const Header = () => {
 
         <div className="flex items-center px-4 text-white">
           <button
-            className="block lg:hidden  absolute right-4 top-[10px] hamburger-menu text-2xl opacity-75 hover:opacity-100 focus:outline-none"
+            className="block absolute right-4 top-[10px] hamburger-menu text-2xl opacity-75 hover:opacity-100 focus:outline-none"
             onClick={toggleMenu}
           >
             ☰
@@ -50,7 +50,7 @@ const Header = () => {
           {isOpen && (
             <nav
               id="nav-menu"
-              className="absolute shadow-md rounded-lg max-w-[150px] w-[150px] transition-all top-14 left-56 duration-500 ease-in-out  border border-sky-500 z-[9999] h-[150px]"
+              className="absolute shadow-md rounded-lg max-w-[150px] w-[150px] transition-all top-14 left-56 duration-500 ease-in-out  border border-sky-500 z-[9999] h-[150px] lg:w-[250px] md:left-[900px]"
             >
               <ul className="block mt-6 px-4 text-center">
               <li className="group text-sky-200 px-4 font-bold uppercase text-lg group-hover:text-white hover:text-white transition-all ease-in-out duration-300">
