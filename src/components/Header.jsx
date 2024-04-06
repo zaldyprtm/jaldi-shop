@@ -7,6 +7,7 @@ import "../components/Header.css";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     const handleOutClick = (event) => {
@@ -26,6 +27,10 @@ const Header = () => {
 
   const toggleModal = () => {
     setShowModal(!showModal);
+  };
+
+  const addToCart = (item) => {
+    setCartItems([...cartItems, item]);
   };
 
   return (
@@ -53,7 +58,7 @@ const Header = () => {
               className="absolute shadow-md rounded-lg max-w-[150px] w-[150px] transition-all top-14 left-56 duration-500 ease-in-out  border border-sky-500 z-[9999] h-[150px] lg:w-[250px] md:left-[900px]"
             >
               <ul className="block mt-6 px-4 text-center">
-              <li className="group text-sky-200 px-4 font-bold uppercase text-lg group-hover:text-white hover:text-white transition-all ease-in-out duration-300">
+                <li className="group text-sky-200 px-4 font-bold uppercase text-lg group-hover:text-white hover:text-white transition-all ease-in-out duration-300">
                   <button className="">
                     <span className="mr-2 ">LOGIN</span>
                     <FontAwesomeIcon icon={faSignIn} />
@@ -74,6 +79,15 @@ const Header = () => {
 
         {/* Render Modal component if showModal is true */}
         {showModal && <Modal toggleModal={toggleModal} />}
+
+        {/* Add to Cart Buttons */}
+        <div className="absolute top-0 right-0 mr-4 mt-2">
+          <ul>
+            {cartItems.map((item, index) => (
+              <li key={index}>{item.name}</li>
+            ))}
+          </ul>
+        </div>
       </header>
     </>
   );
