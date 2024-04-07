@@ -156,7 +156,7 @@ const FoodAndDrinkList = () => {
            <img src={item.strDrinkThumb} alt={item.strDrink} className='w-[30px] rounded-full' />
             <span className='text-sm font-semibold'>{item.strDrink}</span>
           
-            <button className="ml-2 bg-red-500 text-white text-sm px-2 py-1 rounded-md" onClick={() => removeItem(index)}>Remove</button>
+            <button className="ml-2 bg-red-500 text-white text-[10px] px-1  py-1 rounded-md" onClick={() => removeItem(index)}>Remove</button>
 
           </li>
         ))}
