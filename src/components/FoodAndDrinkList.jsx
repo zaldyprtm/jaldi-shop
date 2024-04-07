@@ -135,7 +135,7 @@ const FoodAndDrinkList = () => {
       </div>
 
       {showModal && (
-  <div className="fixed inset-0 z-50 overflow-auto bg-gray-800 bg-opacity-50 flex items-center justify-center">
+  <div className="fixed inset-0 z-50 backdrop-filter backdrop-blur-sm overflow-auto bg-gray-800 bg-opacity-50 flex items-center justify-center">
     <div className="bg-white p-8 rounded-md">
       <h2 className="text-xl text-black font-bold mb-4">Pesanan Anda</h2>
       <ul>
@@ -156,11 +156,11 @@ const FoodAndDrinkList = () => {
 )}
 
       {cartItems.length > 0 && (
-        <div className="mt-4 text-center absolute inset-0 backdrop-filter backdrop-blur-sm ">
+        <div className="mt-4 text-center ">
        <button onClick={openModal} className="px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600"> Pesanan Anda ({cartItems.length})</button>
 
           {showCart && (
-            <div className="mt-2">
+            <div className="mt-2 backdrop-filter backdrop-blur-sm inset-0 absolute">
               <h2 className="text-lg font-semibold mb-2">Cart Items</h2>
               <ul>
                 {cartItems.map((item, index) => (
