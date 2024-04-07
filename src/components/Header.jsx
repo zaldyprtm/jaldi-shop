@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStore } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./Modal"; // Import komponen Modal
@@ -7,8 +7,6 @@ import "../components/Header.css";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
-  const [showPesan, setShowPesan] = useState(false);
 
   useEffect(() => {
     const handleOutClick = (event) => {
@@ -30,21 +28,17 @@ const Header = () => {
     setShowModal(!showModal);
   };
 
-  const addToCart = (item) => {
-    setCartItems([...cartItems, item]);
-  };
-
-  const togglePesananModal = () => {
-    setShowPesan(!showPesan);
-  };
-
   return (
     <>
       <header className="bg-indigo-500 h-12 rounded-b-lg bg-transparent border border-sky-800">
         <div className="px-4 py-2">
           <div className="flex items-center justify-between relative">
             <h1 className="uppercase font-bold text-xl text-emerald-200 hover:text-white transition ease-in-out duration-300 absolute top-[2px]">
-              ZAL DRINKS <span> <FontAwesomeIcon icon={faStore} /> </span>
+              ZAL DRINKS{" "}
+              <span>
+                {" "}
+                <FontAwesomeIcon icon={faStore} />{" "}
+              </span>
             </h1>
           </div>
         </div>
@@ -66,13 +60,20 @@ const Header = () => {
                 <li className="group text-sky-200 px-4 font-bold uppercase text-lg group-hover:text-white hover:text-white transition-all ease-in-out duration-300 mt-2">
                   Home
                 </li>
-                
+
                 <li className="group text-sky-200 px-4 font-bold uppercase mb-1 text-lg group-hover:text-white mt-2">
-                  <button className="uppercase hover:text-white transition-all ease-in-out duration-300" onClick={togglePesananModal}>Pesanan</button>
+                  <button className="uppercase hover:text-white transition-all ease-in-out duration-300">
+                    Pesanan
+                  </button>
                 </li>
 
                 <li className="group text-sky-200 px-4 font-bold uppercase mb-1 text-lg group-hover:text-white mt-2">
-                  <button className="uppercase hover:text-white transition-all ease-in-out duration-300" onClick={toggleModal}>Tentang</button>
+                  <button
+                    className="uppercase hover:text-white transition-all ease-in-out duration-300"
+                    onClick={toggleModal}
+                  >
+                    Tentang
+                  </button>
                 </li>
               </ul>
             </nav>
@@ -82,37 +83,11 @@ const Header = () => {
         {showModal && (
           <Modal toggleModal={toggleModal}>
             <div className="mt-2">
-              <h2 className="text-lg font-semibold mb-2">Keranjang Belanja</h2>
-              <ul>
-                {cartItems.map((item, index) => (
-                  <li key={index}>{item.name}</li>
-                ))}
-              </ul>
+              <h2 className="text-lg font-semibold mb-2">Tentang</h2>
+              <p>Tambahkan konten modal tentang di sini</p>
             </div>
           </Modal>
         )}
-        {/* {showPesan && (
-          <Modal togglePesananModal={togglePesananModal} >
-                          <div className="mt-2">
-              <h2 className="text-lg font-semibold mb-2">Keranjang Belanja</h2>
-              <ul>
-                {cartItems.map((item, index) => (
-                  <li key={index}>{item.name}</li>
-                ))}
-              </ul>
-            </div>
-
-          </Modal>
-        )} */}
-
-        {/* Add to Cart Buttons */}
-        <div className="absolute top-0 right-0 mr-4 mt-2">
-          <ul>
-            {cartItems.map((item, index) => (
-              <li key={index}>{item.name}</li>
-            ))}
-          </ul>
-        </div>
       </header>
     </>
   );

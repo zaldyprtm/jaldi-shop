@@ -4,6 +4,8 @@ import FoodAndDrinkListItem from './FoodAndDrinkListItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
+
+
 const FoodAndDrinkList = () => {
   const [foodAndDrinkList, setFoodAndDrinkList] = useState([]);
   const [filteredFoodAndDrinkList, setFilteredFoodAndDrinkList] = useState([]);
@@ -88,8 +90,18 @@ const FoodAndDrinkList = () => {
     setCartItems(newCartItems);
   };
   
+  const openModalPesanan = () => {
+    setShowModalPesanan(true);
+  };
   
-
+  const closeModalPesanan = () => {
+    setShowModalPesanan(false);
+  };
+  
+  const FoodAndDrinkList = ({ cartItems, setCartItems, openModalPesanan }) => {
+    // ...
+  };
+  
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4">Our Menu</h1>
@@ -174,7 +186,49 @@ const FoodAndDrinkList = () => {
           )}
         </div>
       )}
+      {showModalPesanan && (
+  <Mod closeModal={closeModalPesanan}>
+    <div className="mt-2">
+      <h2 className="text-xl text-black font-bold mb-4">Pesanan Anda</h2>
+      <ul>
+        {cartItems.map((item, index) => (
+          <li key={index} className="mb-2 text-black">
+            <img
+              src={item.strDrinkThumb}
+              alt={item.strDrink}
+              className="w-[30px] rounded-full"
+            />
+            <span className="text-md font-semibold">{item.strDrink}</span>
+
+            <button
+              className="ml-2 bg-red-500 text-white text-sm px-2 py-1 rounded-md"
+              onClick={() => removeItem(index)}
+            >
+              Remove
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-4 flex justify-end">
+        <button
+          className="bg-green-500 text-white px-4 py-2 rounded-md mr-4"
+          onClick={handleCheckout}
+        >
+          Checkout
+        </button>
+        <button
+          className="bg-gray-500 text-white px-4 py-2 rounded-md"
+          onClick={closeModalPesanan}
+        >
+          Close
+        </button>
+      </div>
     </div>
+  </Mod>
+)}
+
+    </div>
+
   );
 };
 
