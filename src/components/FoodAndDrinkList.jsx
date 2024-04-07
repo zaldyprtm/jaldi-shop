@@ -136,13 +136,15 @@ const FoodAndDrinkList = () => {
 
       {showModal && (
   <div className="fixed inset-0 z-50 backdrop-filter backdrop-blur-sm overflow-auto bg-gray-800 bg-opacity-50 flex items-center justify-center">
-    <div className="bg-white p-8 rounded-md">
+    <div className="bg-white p-8 rounded-lg ">
       <h2 className="text-xl text-black font-bold mb-4">Pesanan Anda</h2>
       <ul>
         {cartItems.map((item, index) => (
           <li key={index} className="mb-2 text-black">
-            {item.strDrink}
-            <button className="ml-2 bg-red-500 text-white px-2 py-1 rounded-md" onClick={() => removeItem(index)}>Remove</button>
+           <img src={item.strDrinkThumb} alt={item.strDrink} className='w-[30px] rounded-full' />
+            <span className='text-md font-semibold'>{item.strDrink}</span>
+          
+            <button className="ml-2 bg-red-500 text-white text-sm px-2 py-1 rounded-md" onClick={() => removeItem(index)}>Remove</button>
 
           </li>
         ))}
