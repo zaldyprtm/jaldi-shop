@@ -126,11 +126,11 @@ const FoodAndDrinkList = () => {
             {index + 1}
           </button>
         ))}
-        {numPages > 5 && (
-          <button onClick={() => paginate(6)} className="mx-1 px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded-md text-sm md:text-base text-black font-bold">
-            &raquo;
-          </button>
-        )}
+{currentPage < numPages && (
+  <button onClick={() => paginate(currentPage + 1)} className="mx-1 px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded-md text-sm md:text-base text-black font-bold">
+    &raquo;
+  </button>
+)}
 
       </div>
 
