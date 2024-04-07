@@ -72,7 +72,7 @@ const FoodAndDrinkList = () => {
   const handleCheckout = () => {
     // Here you can implement the logic for checkout process, e.g., redirecting to a checkout page,
     // sending the cart items to a payment gateway, etc.
-    console.log("Checkout", cartItems);
+    alert("Terima kasih sudah berbelanja di Kedai kami ☺", cartItems);
     // For demonstration, let's clear the cart after checkout
     setCartItems([]);
   };
