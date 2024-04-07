@@ -3,7 +3,9 @@ import axios from 'axios';
 import FoodAndDrinkListItem from './FoodAndDrinkListItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-
+import { Toaster} from 'react-hot-toast';
+import { toast} from 'react-hot-toast';
+// import { toast } from 'react-toastify';
 
 
 const FoodAndDrinkList = () => {
@@ -72,8 +74,9 @@ const FoodAndDrinkList = () => {
   const handleCheckout = () => {
     // Here you can implement the logic for checkout process, e.g., redirecting to a checkout page,
     // sending the cart items to a payment gateway, etc.
-    alert("Terima kasih sudah berbelanja di Kedai kami ☺", cartItems);
+    toast.success("Terima kasih sudah berbelanja di Kedai kami ☺", cartItems);
     // For demonstration, let's clear the cart after checkout
+    console.log('terimaksih sudah berbelanja', cartItems);
     setCartItems([]);
   };
 
