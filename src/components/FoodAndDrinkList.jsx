@@ -10,8 +10,12 @@ const FoodAndDrinkList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(4);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterType, setFilterType] = useState('ordinary'); // Default filter type
-  const [cartItems, setCartItems] = useState([]); // State to store cart items
+  const [filterType, setFilterType] = useState('ordinary');
+  const [cartItems, setCartItems] = useState([]);
+  const [showCart, setShowCart] = useState(false); // State to control cart visibility
+  const [showModalPesanan, setShowModalPesanan] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
 
   useEffect(() => {
     const fetchFoodAndDrinkData = async () => {
@@ -58,10 +62,33 @@ const FoodAndDrinkList = () => {
     setFilterType(type);
   };
 
-  // Function to add item to cart
   const addToCart = (item) => {
     setCartItems([...cartItems, item]);
   };
+
+  // Function to handle checkout
+  const handleCheckout = () => {
+    // Here you can implement the logic for checkout process, e.g., redirecting to a checkout page,
+    // sending the cart items to a payment gateway, etc.
+    console.log("Checkout", cartItems);
+    // For demonstration, let's clear the cart after checkout
+    setCartItems([]);
+  };
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+  
+  const closeModal = () => {
+    setShowModal(false);
+  };
+  const removeItem = (index) => {
+    const newCartItems = [...cartItems];
+    newCartItems.splice(index, 1);
+    setCartItems(newCartItems);
+  };
+  
+  
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -104,7 +131,47 @@ const FoodAndDrinkList = () => {
             &raquo;
           </button>
         )}
+
       </div>
+
+      {showModal && (
+  <div className="fixed inset-0 z-50 overflow-auto bg-gray-800 bg-opacity-50 flex items-center justify-center">
+    <div className="bg-white p-8 rounded-md">
+      <h2 className="text-xl text-black font-bold mb-4">Pesanan Anda</h2>
+      <ul>
+        {cartItems.map((item, index) => (
+          <li key={index} className="mb-2 text-black">
+            {item.strDrink}
+            <button className="ml-2 bg-red-500 text-white px-2 py-1 rounded-md" onClick={() => removeItem(index)}>Remove</button>
+
+          </li>
+        ))}
+      </ul>
+      <div className="mt-4 flex justify-end">
+        <button className="bg-green-500 text-white px-4 py-2 rounded-md mr-4" onClick={handleCheckout}>Checkout</button>
+        <button className="bg-gray-500 text-white px-4 py-2 rounded-md" onClick={closeModal}>Close</button>
+      </div>
+    </div>
+  </div>
+)}
+
+      {cartItems.length > 0 && (
+        <div className="mt-4 text-center absolute inset-0 backdrop-filter backdrop-blur-sm ">
+       <button onClick={openModal} className="px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600"> Pesanan Anda ({cartItems.length})</button>
+
+          {showCart && (
+            <div className="mt-2">
+              <h2 className="text-lg font-semibold mb-2">Cart Items</h2>
+              <ul>
+                {cartItems.map((item, index) => (
+                  <li key={index} className="mb-1">{item.strDrink}</li>
+                ))}
+              </ul>
+              <button onClick={handleCheckout} className="mt-2 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Checkout</button>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

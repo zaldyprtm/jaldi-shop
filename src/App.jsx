@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Slide from './components/Slide';
 import FoodAndDrinkList from './components/FoodAndDrinkList';
 
+
 const App = () => {
   return (
     <>
