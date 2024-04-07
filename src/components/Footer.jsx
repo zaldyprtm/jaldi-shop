@@ -4,8 +4,9 @@ import { faAddressCard, faBusinessTime, faCalendar, faCopyright,
          faLocation,
          faMap,
          faPhone, faShop, faSignIn } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'; // Import ikon WhatsApp
+// import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'; // Import ikon WhatsApp
 import '../App.css';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
 
@@ -40,16 +41,15 @@ const Footer = () => {
         <footer className='bg-sky-700 mt-10 mx-auto rounded-md  h-[90px]'>
             <div className='mb-2'>
                 <h1 className='text-center font-bold py-2 uppercase'>zal drinks</h1>
-                <div className='flex justify-center items-center -mt-1'>
+                <div className='flex justify-center items-center -mt-2'>
                     <FontAwesomeIcon icon={faCopyright} className='pr-2'/>
                     2024
                 </div>
                 <div className='mx-auto flex items-center gap-2 justify-center mt-1 mb-2'>
-                    {/* Menggunakan ikon WhatsApp (faWhatsapp) */}
-                    <FontAwesomeIcon icon={faWhatsapp} className='opacity-75 hover:opacity-100 transition-all ease-in-out duration-300 w-[15px] cursor-pointer' onClick={handleWhatsAppClick} />
-                    {/* Menggunakan ikon alamat (faAddressCard) */}
-                    <FontAwesomeIcon icon={faLocation} className='opacity-75 hover:opacity-100 transition-all ease-in-out duration-300 w-[15px] cursor-pointer' onClick={handleGoogleMapsClick} />
-                    <FontAwesomeIcon icon={faInstagram} className='opacity-75 hover:opacity-100 transition-all ease-in-out duration-300 w-[15px] cursor-pointer' onClick={handleIgClick} />
+                    {/* icon alamat */}
+                    <FontAwesomeIcon icon={faLocation} className='opacity-75 hover:opacity-100 hover:scale-125 transition-all ease-in-out duration-300' onClick={handleGoogleMapsClick}/>
+                    {/* icon instagram */}
+                    <FontAwesomeIcon icon={faInstagram} className='opacity-75 hover:opacity-100 hover:scale-125 transition-all ease-in-out duration-300' onClick={handleIgClick}/>
                 </div>
             </div>
         </footer>
