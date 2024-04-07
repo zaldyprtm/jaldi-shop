@@ -154,7 +154,7 @@ const FoodAndDrinkList = () => {
         {cartItems.map((item, index) => (
           <li key={index} className="mb-2 text-black">
            <img src={item.strDrinkThumb} alt={item.strDrink} className='w-[30px] rounded-full' />
-            <span className='text-md font-semibold'>{item.strDrink}</span>
+            <span className='text-sm font-semibold'>{item.strDrink}</span>
           
             <button className="ml-2 bg-red-500 text-white text-sm px-2 py-1 rounded-md" onClick={() => removeItem(index)}>Remove</button>
 
