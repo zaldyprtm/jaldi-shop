@@ -6,7 +6,6 @@ import { faAddressCard, faBusinessTime, faCalendar, faCopyright,
          faMap,
          faPhone, faShop, faSignIn } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faSun, faCloudRain, faCloud, faSnowflake } from '@fortawesome/free-solid-svg-icons'; // Menambahkan ikon cuaca
 import '../App.css';
 
 const Footer = () => {
@@ -35,16 +34,17 @@ const Footer = () => {
                     <FontAwesomeIcon icon={faCopyright} className='pr-2'/>
                     2024
                 </div>
-                <div className='mx-auto flex  items-center gap-2 justify-center mt-1 mb-2'>
+                <div className='mx-auto flex items-center gap-2 justify-center mt-1 mb-2'>
                     <FontAwesomeIcon icon={faLocation} className='opacity-75 hover:opacity-100 hover:scale-125 transition-all ease-in-out duration-300' onClick={handleGoogleMapsClick}/>
                     <FontAwesomeIcon icon={faInstagram} className='opacity-75 hover:opacity-100 hover:scale-125 transition-all ease-in-out duration-300' onClick={handleIgClick}/>
                     
-                    <div className='block text-center absolute'>
                     {/* <p className='text-xs mt-16'>Temperature: {weatherData.main.temp} °C</p> */}
                     {/* <p className='text-xs mt-16 text-center'>{weatherData.weather[0].main} {getWeatherIcon(weatherData.weather[0].main)}</p> */}
-                    <p className='text-xs mt-12 text-center '>Pangkalpinang</p>
-                    </div>
+                    
                 </div>
+                <div className=''>
+                    <p className='text-xs text-center'>Pangkalpinang</p>
+                    </div>
 
             </div>
         </footer>
